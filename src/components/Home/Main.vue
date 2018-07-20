@@ -11,7 +11,12 @@
       <h1 class="mt-2 mb-2" slot="title">Our Proud Members</h1>
       <p slot="subtitle">Stuff about our favorite and great members here</p>
     </app-carousel>
-    <app-signup />
+    <app-signup>
+      <h2 class="mt-5 mb-2" slot="title">Grow Your Business</h2>
+      <h1 class="mt-2 mb-2" slot="subtitle">Join Now and Take Advantage of Our Member Benefits</h1>
+    </app-signup>
+    <app-contact></app-contact>
+    <app-footer></app-footer>
   </div>
 </template>
 
@@ -24,6 +29,8 @@ import Explore from './Components/Explore';
 import Signup from './Components/Signup';
 import Members from './Components/Members';
 import Carousel from './Components/MemberCarousel';
+import Contact from './Components/Contact';
+import Footer from './Components/Footer';
 
 export default {
   name: 'Main',
@@ -57,8 +64,8 @@ export default {
     };
   },
   computed: {
-    randomAd () {
-      let rand = Math.floor(Math.random() * this.ads.length);
+    randomAd() {
+      const rand = Math.floor(Math.random() * this.ads.length);
       return this.ads[rand];
     },
   },
@@ -71,6 +78,8 @@ export default {
     appSignup: Signup,
     appMembers: Members,
     appCarousel: Carousel,
+    appContact: Contact,
+    appFooter: Footer,
   },
 };
 </script>
@@ -78,13 +87,27 @@ export default {
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed|IBM+Plex+Sans:300,400,700');
   body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Karla', sans-serif;
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'IBM Plex Sans Condensed', sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }
     h1 {
       font-size: 2.5em;
+    }
+    .text--white {
+      color: white !important;
+    }
+    .slick-prev:before {
+      color: #72ccd2;
+      font-size: 30px;
+      margin-left: -10px;
+    }
+
+    .slick-next:before {
+      color: #72ccd2;
+      font-size: 30px;
+      margin-right: -10px;
     }
   }
 </style>

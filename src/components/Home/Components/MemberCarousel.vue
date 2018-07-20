@@ -1,13 +1,13 @@
 <template>
-  <v-container fluid>
-    <v-layout row wrap class="mb-5 scroll mt-5 pt-5">
-      <v-flex xs12 class="ml-3 mr-5 text-xs-center">
+  <v-container fluid class="pb-5">
+    <v-layout row wrap class="mb-5 scroll mt-3 pt-5" justify-center align-content-middle>
+      <v-flex xs12 class="text-xs-center">
         <slot name="title">Recently Added Members</slot>
         <slot class="mt-3" name="subtitle">Stuff about members and stuff here...</slot>
       </v-flex>
     </v-layout>
-    <v-layout row class="scroll">
-      <v-flex shrink xs12 height="100px">
+    <v-layout row class="scroll" justify-center align-content-middle>
+      <v-flex shrink xs12 md8 height="100px" class="mb-5">
         <slick
           ref="slick"
           :options="slickOptions"
@@ -47,7 +47,7 @@ export default {
         autoplaySpeed: 2000,
         slidesToShow: 4,
         slidesToScroll: 2,
-        dots: true,
+        dots: false,
         infinite: true,
         variableWidth: true,
         responsive: [
@@ -100,42 +100,39 @@ export default {
 
     // Events listeners
     handleAfterChange(event, slick, currentSlide) {
-      console.log('handleAfterChange', event, slick, currentSlide);
+      // console.log('handleAfterChange', event, slick, currentSlide);
     },
     handleBeforeChange(event, slick, currentSlide, nextSlide) {
-      console.log('handleBeforeChange', event, slick, currentSlide, nextSlide);
+      // console.log('handleBeforeChange', event, slick, currentSlide, nextSlide);
     },
     handleBreakpoint(event, slick, breakpoint) {
-      console.log('handleBreakpoint', event, slick, breakpoint);
+      // console.log('handleBreakpoint', event, slick, breakpoint);
     },
     handleDestroy(event, slick) {
-      console.log('handleDestroy', event, slick);
+      // console.log('handleDestroy', event, slick);
     },
     handleEdge(event, slick, direction) {
-      console.log('handleEdge', event, slick, direction);
+      // console.log('handleEdge', event, slick, direction);
     },
     handleInit(event, slick) {
-      console.log('handleInit', event, slick);
+      // console.log('handleInit', event, slick);
     },
     handleReInit(event, slick) {
-      console.log('handleReInit', event, slick);
+      // console.log('handleReInit', event, slick);
     },
     handleSetPosition(event, slick) {
-      console.log('handleSetPosition', event, slick);
+      // console.log('handleSetPosition', event, slick);
     },
     handleSwipe(event, slick, direction) {
-      console.log('handleSwipe', event, slick, direction);
+      // console.log('handleSwipe', event, slick, direction);
     },
     handleLazyLoaded(event, slick, image, imageSource) {
-      console.log('handleLazyLoaded', event, slick, image, imageSource);
+      // console.log('handleLazyLoaded', event, slick, image, imageSource);
     },
     handleLazeLoadError(event, slick, image, imageSource) {
-      console.log('handleLazeLoadError', event, slick, image, imageSource);
+      // console.log('handleLazeLoadError', event, slick, image, imageSource);
     },
   },
-  created () {
-    console.log(this.memberList)
-  }
 };
 </script>
 
