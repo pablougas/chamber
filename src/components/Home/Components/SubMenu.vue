@@ -28,7 +28,7 @@ export default {
   #sub-nav {
     position: absolute;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
     color: #f1f1f1;
     width: 100%;
     height: auto;

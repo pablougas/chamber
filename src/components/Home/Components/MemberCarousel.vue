@@ -1,22 +1,34 @@
 <template>
-  <slick
-    ref="slick"
-    :options="slickOptions"
-    @afterChange="handleAfterChange"
-    @beforeChange="handleBeforeChange"
-    @breakpoint="handleBreakpoint"
-    @destroy="handleDestroy"
-    @edge="handleEdge"
-    @init="handleInit"
-    @reInit="handleReInit"
-    @setPosition="handleSetPosition"
-    @swipe="handleSwipe"
-    @lazyLoaded="handleLazyLoaded"
-    @lazyLoadError="handleLazeLoadError">
-    <a v-for="(member, index) in memberList" href="'http://'+ member.website" :key="index" class="ma-3" target="_blank">
-      <img :src="member.photoUrl" alt="member.website" height="200px">
-    </a>
-  </slick>
+  <v-container fluid>
+    <v-layout row wrap class="mb-5 scroll mt-5 pt-5">
+      <v-flex xs12 class="ml-3 mr-5 text-xs-center">
+        <slot name="title">Recently Added Members</slot>
+        <slot class="mt-3" name="subtitle">Stuff about members and stuff here...</slot>
+      </v-flex>
+    </v-layout>
+    <v-layout row class="scroll">
+      <v-flex shrink xs12 height="100px">
+        <slick
+          ref="slick"
+          :options="slickOptions"
+          @afterChange="handleAfterChange"
+          @beforeChange="handleBeforeChange"
+          @breakpoint="handleBreakpoint"
+          @destroy="handleDestroy"
+          @edge="handleEdge"
+          @init="handleInit"
+          @reInit="handleReInit"
+          @setPosition="handleSetPosition"
+          @swipe="handleSwipe"
+          @lazyLoaded="handleLazyLoaded"
+          @lazyLoadError="handleLazeLoadError">
+          <a v-for="(member, index) in memberList" href="'http://'+ member.website" :key="index" class="ma-3" target="_blank">
+            <img :src="member.photoUrl" alt="member.website" height="200px">
+          </a>
+        </slick>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -69,7 +81,6 @@ export default {
       },
     };
   },
-
   // All slick methods can be used too, example here
   methods: {
     next() {
@@ -122,9 +133,14 @@ export default {
       console.log('handleLazeLoadError', event, slick, image, imageSource);
     },
   },
+  created () {
+    console.log(this.memberList)
+  }
 };
 </script>
 
 <style scoped lang="scss">
-
+  .container {
+    background-color: white;
+  }
 </style>

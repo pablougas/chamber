@@ -3,8 +3,8 @@
     <v-container grid-list-md>
       <v-layout row wrap class="mb-5">
         <v-flex xs12 class="ml-3 mr-5 text-xs-center">
-          <h1 class="mt-2 mb-2">Recently Added Members</h1>
-          <p>Stuff about members and stuff here...</p>
+          <h1 class="mt-5 mb-2">Recently Added Members</h1>
+          <p class="mt-3">Stuff about members and stuff here...</p>
         </v-flex>
       </v-layout>
       <v-layout row class="mt-5">
@@ -45,11 +45,6 @@
           </div>
         </v-flex>
       </v-layout>
-      <v-layout row>
-        <v-flex shrink xs12 height="100px">
-          <app-carousel :member-list="memberList"></app-carousel>
-        </v-flex>
-      </v-layout>
     </v-container>
   </div>
 </template>
@@ -67,25 +62,6 @@ export default {
         { category: 'Coffee', photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', name: 'Blazin` Saddles', street: '123 Main St.', city: 'Puyallup', state: 'WA', zip: '98391', website: 'www.website.com', phone: '253 255-5500' },
         { category: 'Tours', photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', name: 'Heritage Bank', street: '123 Main St.', city: 'Sumner', state: 'WA', zip: '98391', website: 'www.website.com', phone: '253 255-5500' },
       ],
-      memberList: [
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-        { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
-      ],
     };
   },
   components: {
@@ -99,6 +75,13 @@ export default {
     height: auto;
 
     .container {
+      h1 {
+        font-size: 2.5em;
+        padding-bottom: 20px;
+      }
+      .scroll {
+        background-color: white;
+      }
 
       .member-feature {
         position: relative;
