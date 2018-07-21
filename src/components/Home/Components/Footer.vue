@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
 
   </v-container>
 </template>
@@ -12,7 +12,7 @@
 
 <style scoped lang="scss">
   .container {
-    background-color: white;
-    height: 400px;
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    height: 300px;
   }
 </style>

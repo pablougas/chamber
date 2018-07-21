@@ -1,28 +1,36 @@
 <template>
   <div class="wrapper">
-    <v-container>
+    <v-container fluid>
       <v-layout justify-space-around align-content-center>
-        <v-flex shrink justify-center>
-          <img :src="ad.photoUrl" :alt="ad.description" />
+        <v-flex shrink justify-center class="text-xs-center text--white">
+          <slot name="title"></slot>
+          <slot name="subtitle"></slot>
         </v-flex>
       </v-layout>
     </v-container>
+    <app-ad-carousel :adss="advertisements" />
   </div>
 </template>
 
 <script>
+import AdCarousel from './AdCarousel';
+
 export default {
   name: 'Advertising',
-  props: ['ad'],
+  props: ['advertisements'],
+  components: {
+    appAdCarousel: AdCarousel,
+  },
 };
 </script>
 
 <style scoped lang="scss">
   .wrapper {
-    background-color: #ECEFF1;
-    min-height: 100px;
-    max-height: 150px;
-    width: 100%;
-    overflow: hidden;
+    text-align: center;
+    .container {
+      background-color: #72ccd2;
+      min-height: 100px;
+      overflow: hidden;
+    }
   }
 </style>

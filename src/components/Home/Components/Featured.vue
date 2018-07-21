@@ -114,7 +114,7 @@ export default {
 
 <style scoped lang="scss">
   div.wrapper {
-    margin-top: 60px;
+    margin-top: 30px;
 
     .title-box {
 

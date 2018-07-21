@@ -41,7 +41,7 @@ export default {
     position: relative;
     display: flex;
     justify-content: center;
-    height: 660px;
+    min-height: 680px;
     overflow: hidden;
 
     #myVideo {

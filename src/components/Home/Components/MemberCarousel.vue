@@ -6,8 +6,8 @@
         <slot class="mt-3" name="subtitle">Stuff about members and stuff here...</slot>
       </v-flex>
     </v-layout>
-    <v-layout row class="scroll" justify-center align-content-middle>
-      <v-flex shrink xs12 md8 height="100px" class="mb-5">
+    <v-layout row justify-center align-content-middle>
+      <v-flex shrink xs12 md8 class="mb-5">
         <slick
           ref="slick"
           :options="slickOptions"
@@ -23,7 +23,7 @@
           @lazyLoaded="handleLazyLoaded"
           @lazyLoadError="handleLazeLoadError">
           <a v-for="(member, index) in memberList" href="'http://'+ member.website" :key="index" class="ma-3" target="_blank">
-            <img :src="member.photoUrl" alt="member.website" height="200px">
+            <img :src="member.photoUrl" alt="member.website" height="150px">
           </a>
         </slick>
       </v-flex>
@@ -33,7 +33,6 @@
 
 <script>
 import Slick from 'vue-slick';
-// import `node_modules/slick-carousel/slick/slick.css`;
 
 export default {
   name: 'MemberCarousel',

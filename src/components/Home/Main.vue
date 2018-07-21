@@ -2,7 +2,10 @@
   <div>
     <app-nav app/>
     <app-banner />
-    <app-advertising :ad="randomAd" />
+    <app-advertising :advertisements="ads">
+      <h2 class="mt-1 mb-1" slot="title">A Voice For Business</h2>
+      <h1 class="mt-1 mb-2" slot="subtitle">Dedicated To The Success of Our Community</h1>
+    </app-advertising>
     <app-featured />
     <app-explore />
     <app-members />
@@ -12,8 +15,8 @@
       <p slot="subtitle">Stuff about our favorite and great members here</p>
     </app-carousel>
     <app-signup>
-      <h2 class="mt-5 mb-2" slot="title">Grow Your Business</h2>
-      <h1 class="mt-2 mb-2" slot="subtitle">Join Now and Take Advantage of Our Member Benefits</h1>
+      <h2 class="mt-2 mb-1" slot="title">Grow Your Business</h2>
+      <h1 class="mt-1 mb-1" slot="subtitle">Join Now and Take Advantage of Our Member Benefits</h1>
     </app-signup>
     <app-contact></app-contact>
     <app-footer></app-footer>
@@ -36,10 +39,19 @@ export default {
   name: 'Main',
   data() {
     return {
+      showContact: false,
       ads: [
         {
-          photoUrl: 'https://chambermaster.blob.core.windows.net/images/chambers/3207/sp/wells-fargo-banner.jpg',
-          description: 'wells fargo',
+          photoUrl: 'http://via.placeholder.com/500x100',
+          website: 'www.wellsfargo.com',
+        },
+        {
+          photoUrl: 'http://via.placeholder.com/500x100',
+          website: 'www.sky9.us',
+        },
+        {
+          photoUrl: 'http://via.placeholder.com/500x100',
+          website: 'www.sky9.us',
         },
       ],
       memberList: [
