@@ -1,5 +1,6 @@
 <template>
   <div>
+    <app-join></app-join>
     <app-nav app/>
     <app-banner />
     <app-advertising :advertisements="ads">
@@ -14,7 +15,6 @@
       <h1 class="mt-2 mb-2" slot="title">Our Proud Members</h1>
       <p slot="subtitle">Stuff about our favorite and great members here</p>
     </app-carousel>
-    <app-join></app-join>
     <app-signup>
       <h2 class="mt-2 mb-1" slot="title">Grow Your Business</h2>
       <h1 class="mt-1 mb-1" slot="subtitle">Join Now and Take Advantage of Our Member Benefits</h1>
