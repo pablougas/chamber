@@ -4,34 +4,66 @@
       <v-parallax :src="image"></v-parallax>
     </v-container>
     <v-layout justify-space-around row wrap class="mt-4">
-      <v-flex xs12 sm4 >
-        <v-card color="grey lighten-4" class="mb-5" :class="{'hover': $vuetify.breakpoint.mdAndUp}">
-          <v-card-title>
-              <span class="blue--text text--lighten-2 display-1">Puyallup - Sumner</span>
-          </v-card-title>
-          <v-navigation-drawer width="100%">
-            <v-list>
-              <v-list-tile
-                v-for="(actvt, i) in actvts"
-                :key="i"
-                @click=""
+      <v-flex xs12 sm4>
+        <v-card :class="{'hover mb-5': $vuetify.breakpoint.smAndUp}">
+          <h1
+            class="blue--text text--lighten-2 display-1 text-xs-center mb-4"
+            :class="{'pt-4':$vuetify.breakpoint.mdAndUp, 'pt-3' :$vuetify.breakpoint.smAndDown}">
+            Puyallup - Sumner
+          </h1>
+
+          <v-card-text :class="{'pa-0':$vuetify.breakpoint.smAndUp}">
+            <v-spacer></v-spacer>
+            <v-menu
+              bottom
+              class="align-right"
+              origin="center center"
+              transition="scale-transition"
+              v-if="$vuetify.breakpoint.xsOnly">
+              <v-btn
+                     slot="activator"
+                     flat
+                     icon
               >
-                <v-list-tile-content>
-                  <v-list-tile-title>{{ actvt }}</v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
-            </v-list>
-          </v-navigation-drawer>
+                <v-icon>menu</v-icon>
+              </v-btn>
+              <v-list>
+                <v-list-tile
+                  v-for="(actvt, i) in actvts"
+                  :key="i"
+                  @click=""
+                >
+                  <v-list-tile-content>
+                    <v-list-tile-title>{{ actvt }}</v-list-tile-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+              </v-list>
+            </v-menu>
+            <v-navigation-drawer width="100%" v-else flat>
+              <v-list>
+                <v-list-tile
+                  v-for="(actvt, i) in actvts"
+                  :key="i"
+                  @click=""
+                >
+                  <v-list-tile-content>
+                    <v-list-tile-title>{{ actvt }}</v-list-tile-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+              </v-list>
+            </v-navigation-drawer>
+          </v-card-text>
+
         </v-card>
         <v-card>
           <v-card-text>
-            <v-img src="https://picsum.photos/510/300?random" aspect-ratio="1.7"></v-img>
+            <v-img src="https://picsum.photos/510/300?random" aspect-ratio="1.7" contain></v-img>
           </v-card-text>
         </v-card>
       </v-flex>
-      <v-flex d-flex xs12 sm6>
-          <v-card>
-            <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      <v-flex xs12 sm6>
+          <v-card class="mt-5" flat color=" grey lighten-5">
+            <v-card-text class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Cras et lacinia arcu,
               nec iaculis libero. Vivamus eu risus nec urna finibus viverra. Etiam lacinia
               imperdiet vestibulum. Donec et ante eget augue maximus fringilla. Nulla facilisi.
@@ -40,8 +72,16 @@
               massa non, suscipit elementum erat. Cras bibendum velit dui. Morbi dignissim tortor
               ac nunc accumsan vulputate. Donec non enim odio.
             </v-card-text>
-            <img v-for="(pic,i) in pics" :src="pic" :key="i">
-          </v-card>
+            <v-layout row wrap>
+              <v-flex xs6 v-for="(pic,i) in pics" class="pa-2">
+                <v-img :src="pic" :key="i" aspect-ratio="1.2"></v-img>
+              </v-flex>
+            </v-layout>
+            <v-spacer></v-spacer>
+            <v-card>
+              <v-img></v-img>
+            </v-card>
+        </v-card>
       </v-flex>
     </v-layout>
   </div>
@@ -55,8 +95,8 @@ export default {
       actvts: ['Attractions', 'Events', 'Hiking', 'Restaurants', 'Night Life', 'Shopping', 'Cafes'],
       ad: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3WgGYmxug5AyMAbM_idADlwMmbojHx_Xh8Lv0ObipYBQHZK-gQQ',
       pics: [
-        'http://www.puyallupsda.org/images/header_logo.png',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH75vIIQomB0OFjSwRNUmFeXHu082Jf3PRl2CBmdVuElCzMdC1',
+        'https://beekings.com/wp-content/uploads/2015/08/washington-state-fair.jpg',
       ],
     };
   },
@@ -74,5 +114,10 @@ export default {
   }
   .v-parallax__content{
     background-position: center top;
+  }
+  .align-right{
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 </style>
