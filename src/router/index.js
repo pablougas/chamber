@@ -11,12 +11,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
       component: HomeMain,
       children: [
         {
           path: '',
-          name: 'landing',
+          name: 'home',
           component: Landing,
         },
         {

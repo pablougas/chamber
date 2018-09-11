@@ -125,7 +125,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
   name: 'JoinNow',
@@ -136,6 +136,7 @@ export default {
       notifications: false,
       sound: true,
       widgets: false,
+      items: ['Washington'],
       business: {
         name: '',
         street: '',
@@ -153,6 +154,14 @@ export default {
         position: '',
       },
       terms: false,
+      nameRules: [
+		    v => !!v || 'Name is required',
+		    v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+	    ],
+	    emailRules: [
+		    v => !!v || 'E-mail is required',
+		    v => /.+@.+/.test(v) || 'E-mail must be valid',
+	    ],
     };
   },
   methods: {

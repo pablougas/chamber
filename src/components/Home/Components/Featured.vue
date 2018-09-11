@@ -22,7 +22,7 @@
           <v-layout row wrap>
             <v-flex d-flex>
               <v-card class="featured-small" dark tile flat>
-                <v-card-media :src="featured.photoUrl" height="260px">
+                <v-img :src="featured.photoUrl" height="260px">
                   <v-container fill-height fluid pa-2>
                     <v-layout fill-height>
                       <v-flex xs12 align-end flexbox>
@@ -32,10 +32,10 @@
                       </v-flex>
                     </v-layout>
                   </v-container>
-                </v-card-media>
+                </v-img>
               </v-card>
               <v-card class="featured-small" dark tile flat>
-                <v-card-media :src="featured.photoUrl" height="260px">
+                <v-img :src="featured.photoUrl" height="260px">
                   <v-container fill-height fluid pa-2>
                     <v-layout fill-height>
                       <v-flex xs12 align-end flexbox>
@@ -45,12 +45,12 @@
                       </v-flex>
                     </v-layout>
                   </v-container>
-                </v-card-media>
+                </v-img>
               </v-card>
             </v-flex>
             <v-flex d-flex>
               <v-card class="featured-long" dark tile flat>
-                <v-card-media :src="featured.photoUrl" height="260px">
+                <v-img :src="featured.photoUrl" height="260px">
                   <v-container fill-height fluid pa-2>
                     <v-layout fill-height>
                       <v-flex xs12 align-end flexbox>
@@ -60,14 +60,14 @@
                       </v-flex>
                     </v-layout>
                   </v-container>
-                </v-card-media>
+                </v-img>
               </v-card>
             </v-flex>
           </v-layout>
         </v-flex>
         <v-flex d-flex xs12 sm6 xl4 justify-start>
           <v-card class="featured">
-            <v-card-media :src="featured.photoUrl" height="550px">
+            <v-img :src="featured.photoUrl" height="550px">
               <v-container fill-height fluid pa-2>
                 <v-layout fill-height>
                   <v-flex xs12 align-end flexbox>
@@ -76,7 +76,7 @@
                   </v-flex>
                 </v-layout>
               </v-container>
-            </v-card-media>
+            </v-img>
           </v-card>
         </v-flex>
       </v-layout>
