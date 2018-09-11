@@ -73,14 +73,14 @@
               ac nunc accumsan vulputate. Donec non enim odio.
             </v-card-text>
             <v-layout row wrap>
-              <v-flex xs6 v-for="(pic,i) in pics" class="pa-2">
-                <v-img :src="pic" :key="i" aspect-ratio="1.2"></v-img>
+              <v-flex xs6 v-for="(pic,i) in pics" :key="i" class="pa-2">
+                <v-img :src="pic" aspect-ratio="1.2"></v-img>
               </v-flex>
             </v-layout>
-            <v-spacer></v-spacer>
-            <v-card>
-              <v-img></v-img>
-            </v-card>
+        </v-card>
+        <v-spacer></v-spacer>
+        <v-card>
+            <v-img src="https://via.placeholder.com/350x150"></v-img>
         </v-card>
       </v-flex>
     </v-layout>
