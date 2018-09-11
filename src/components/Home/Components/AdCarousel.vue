@@ -1,25 +1,25 @@
 <template>
-  <v-layout row justify-center align-content-middle>
-    <v-flex shrink xs12 md6 class="mt-4 ad-carousel">
-      <slick
-        ref="adSlick"
-        :options="slickOptions"
-        @afterChange="handleAfterChange"
-        @beforeChange="handleBeforeChange"
-        @breakpoint="handleBreakpoint"
-        @destroy="handleDestroy"
-        @edge="handleEdge"
-        @init="handleInit"
-        @reInit="handleReInit"
-        @setPosition="handleSetPosition"
-        @swipe="handleSwipe"
-        @lazyLoaded="handleLazyLoaded"
-        @lazyLoadError="handleLazeLoadError">
-        <a v-for="(ad, index) in adss" href="'http://'+ ad.website" :key="index" target="_blank">
-          <img :src="ad.photoUrl" alt="ad.website">
-        </a>
-      </slick>
-    </v-flex>
+  <v-layout row justify-center align-center>
+        <div class="ad-carousel mt-4">
+            <slick
+                    ref="adSlick"
+                    :options="slickOptions"
+                    @afterChange="handleAfterChange"
+                    @beforeChange="handleBeforeChange"
+                    @breakpoint="handleBreakpoint"
+                    @destroy="handleDestroy"
+                    @edge="handleEdge"
+                    @init="handleInit"
+                    @reInit="handleReInit"
+                    @setPosition="handleSetPosition"
+                    @swipe="handleSwipe"
+                    @lazyLoaded="handleLazyLoaded"
+                    @lazyLoadError="handleLazeLoadError">
+                <a v-for="(ad, index) in ads" href="'http://'+ ad.website" :key="index" target="_blank">
+                    <img :src="ad.photoUrl" alt="ad.website">
+                </a>
+            </slick>
+        </div>
   </v-layout>
 </template>
 
@@ -28,14 +28,26 @@ import Slick from 'vue-slick';
 
 export default {
   name: 'AdCarousel',
-  props: ['adss'],
   components: { Slick },
   data() {
     return {
+      ads: [
+        {
+          photoUrl: 'http://via.placeholder.com/500x100',
+          website: 'www.wellsfargo.com',
+        },
+        {
+          photoUrl: 'http://via.placeholder.com/500x100',
+          website: 'www.sky9.us',
+        },
+        {
+          photoUrl: 'http://via.placeholder.com/500x100',
+          website: 'www.sky9.us',
+        },
+      ],
       slickOptions: {
         centerMode: true,
         slidesToShow: 1,
-        slidesToScroll: 1,
         arrows: false,
         autoplay: true,
         autoplaySpeed: 2000,
@@ -102,7 +114,10 @@ export default {
 
 <style lang="scss">
   .ad-carousel {
-
+      max-width: 350px;
+      @media only screen and (min-width: 500px) {
+          max-width:500px;
+      }
     .slick-slide img {
       max-height: 100px;
       max-width: 100%;

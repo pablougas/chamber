@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="pb-5">
+  <v-container fluid class="pa-5">
     <v-layout row wrap class="mb-5 scroll mt-3 pt-5" justify-center align-content-middle>
       <v-flex xs12 class="text-xs-center">
         <slot name="title">Recently Added Members</slot>

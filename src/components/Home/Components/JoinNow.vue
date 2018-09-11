@@ -1,5 +1,4 @@
 <template>
-  <v-layout row justify-center>
     <v-dialog
       v-model="dialog"
       fullscreen
@@ -121,7 +120,6 @@
         </v-container>
       </v-card>
     </v-dialog>
-  </v-layout>
 </template>
 
 <script>

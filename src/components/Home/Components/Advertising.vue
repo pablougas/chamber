@@ -8,7 +8,7 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <app-ad-carousel :adss="advertisements" />
+    <app-ad-carousel />
   </div>
 </template>
 

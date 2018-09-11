@@ -1,7 +1,7 @@
 <template>
     <div>
         <app-banner />
-        <app-advertising :advertisements="ads">
+        <app-advertising>
             <h2 class="mt-1 mb-1" slot="title">A Voice For Business</h2>
             <h1 class="mt-1 mb-2" slot="subtitle">Dedicated To The Success of Our Community</h1>
         </app-advertising>
@@ -47,20 +47,6 @@ export default {
     appCarousel: Carousel,
   },
   data: () => ({
-    ads: [
-      {
-      	photoUrl: 'http://via.placeholder.com/500x100',
-        website: 'www.wellsfargo.com',
-      },
-      {
-        	photoUrl: 'http://via.placeholder.com/500x100',
-			  website: 'www.sky9.us',
-		  },
-		  {
-			  photoUrl: 'http://via.placeholder.com/500x100',
-			  website: 'www.sky9.us',
-		  },
-	  ],
 	  memberList: [
 		  { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
 		  { photoUrl: 'https://pbs.twimg.com/media/DGV4VvrUIAA89TI.jpg', website: 'www.website.com' },
